@@ -1,0 +1,42 @@
+type Query {
+    drivers(driverCode: String): [Driver]
+
+    capacity: [Capacity]
+    capacity_count: Int
+}
+
+type Driver {
+    id: Int
+    name: String
+    driverGroup: String
+    dispatchGroup: String
+    driverCode: String
+    siteCode: String
+    status: String
+    commissionPercentage: Float
+}
+
+type Capacity{
+    id: ID!
+    name: String
+    email: String
+    city: String
+    operationManager: String
+    startTime: String
+    completionTime: String
+    lastModifiedTime: String
+    dg: Boolean
+    dg7: Boolean
+    marken: Boolean
+    parcelShield: Boolean
+    tsaRequired: Boolean
+    vehicleType: String
+    numberOfIcsNeeded: Int
+    monday: String
+    tuesday: String
+    wednesday: String
+    thursday: String
+    friday: String
+    saturday: String
+    sunday: String
+}
