@@ -18,7 +18,7 @@ public class CapacityDataFetcher {
     }
 
     @DgsQuery
-    public long capacity_count() {
+    public long capacityCount() {
         return capacityService.getCapacityCount();
     }
 }

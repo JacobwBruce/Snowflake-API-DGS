@@ -2,7 +2,7 @@ type Query {
     drivers(driverCode: String): [Driver]
 
     capacity: [Capacity]
-    capacity_count: Int
+    capacityCount: Int
 }
 
 type Driver {
