@@ -7,7 +7,10 @@ type Query {
   capacity: [Capacity]
 
   "Total number of capacity requests"
-  capacityCount: Int
+  capacityCount(
+    "Optional: enter a location to search for a specific location. If not provided, all locations will be returned."
+    location: String
+  ): [CapacityCount]
 }
 
 type Driver {
@@ -102,4 +105,10 @@ type Capacity {
 
   "Time needed for sundays"
   sunday: String
+}
+
+type CapacityCount {
+  location: String
+  open: Int
+  completed: Int
 }

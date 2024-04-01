@@ -25,7 +25,7 @@ public class Capacity {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "Email")
+    @Column(name = "EMAIL")
     private String email;
 
     @Column(name = "CITY_LOCATION")

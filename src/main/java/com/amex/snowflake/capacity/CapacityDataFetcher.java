@@ -2,6 +2,8 @@ package com.amex.snowflake.capacity;
 
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsQuery;
+import com.netflix.graphql.dgs.InputArgument;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -18,7 +20,15 @@ public class CapacityDataFetcher {
     }
 
     @DgsQuery
-    public long capacityCount() {
-        return capacityService.getCapacityCount();
+    public List<CapacityCount> capacityCount(@InputArgument String location) {
+        if(location == null){
+            return capacityService.getCapacityCount();
+        }
+        
+        CapacityCount capacityCount = capacityService.getCapacityCountByLocation(location);
+        if (capacityCount == null) {
+            return List.of();
+        }
+        return List.of(capacityCount);
     }
 }
