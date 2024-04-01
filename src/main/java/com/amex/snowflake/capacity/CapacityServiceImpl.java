@@ -5,8 +5,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+interface CapacityService {
+    List<Capacity> getAllCapacities();
+    long getCapacityCount();
+}
 @Service
-public class CapacityService {
+public class CapacityServiceImpl implements CapacityService{
 
     @Autowired
     private CapacityRepository capacityRepository;

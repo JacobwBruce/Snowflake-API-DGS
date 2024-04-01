@@ -1,42 +1,105 @@
 type Query {
-    drivers(driverCode: String): [Driver]
+  drivers(
+    "Optional: enter a driverCode to search for a specific driver. If not provided, all drivers will be returned."
+    driverCode: String
+  ): [Driver]
 
-    capacity: [Capacity]
-    capacityCount: Int
+  capacity: [Capacity]
+
+  "Total number of capacity requests"
+  capacityCount: Int
 }
 
 type Driver {
-    id: Int
-    name: String
-    driverGroup: String
-    dispatchGroup: String
-    driverCode: String
-    siteCode: String
-    status: String
-    commissionPercentage: Float
+  "The unique identifier of the driver."
+  id: Int
+
+  "The driver's full name"
+  name: String
+
+  "Driver's group"
+  driverGroup: String
+
+  "Driver's dispatch group"
+  dispatchGroup: String
+
+  "Driver's code"
+  driverCode: String
+
+  "Driver's site code"
+  siteCode: String
+
+  "Status of the driver"
+  status: String
+
+  "Driver's commission percentage"
+  commissionPercentage: Float
 }
 
-type Capacity{
-    id: ID!
-    name: String
-    email: String
-    city: String
-    operationManager: String
-    startTime: String
-    completionTime: String
-    lastModifiedTime: String
-    dg: Boolean
-    dg7: Boolean
-    marken: Boolean
-    parcelShield: Boolean
-    tsaRequired: Boolean
-    vehicleType: String
-    numberOfIcsNeeded: Int
-    monday: String
-    tuesday: String
-    wednesday: String
-    thursday: String
-    friday: String
-    saturday: String
-    sunday: String
+type Capacity {
+  "The unique identifier of the capacity"
+  id: ID!
+
+  "Name of the person requesting the capacity"
+  name: String
+
+  "Email of the person requesting the capacity"
+  email: String
+
+  "City for the requested capacity"
+  city: String
+
+  "Name of the Operation Manager at the location"
+  operationManager: String
+
+  "Start time for the requested drivers"
+  startTime: String
+
+  "Time & date the capacity was fulfilled"
+  completionTime: String
+
+  "Time & date the capacity was last updated"
+  lastModifiedTime: String
+
+  "DG needed"
+  dg: Boolean
+
+  "DG7 needed"
+  dg7: Boolean
+
+  "Marken needed"
+  marken: Boolean
+
+  "Parcel Shield needed"
+  parcelShield: Boolean
+
+  "TSA required"
+  tsaRequired: Boolean
+
+  "Vehicle type needed"
+  vehicleType: String
+
+  "Number of drivers needed"
+  numberOfIcsNeeded: Int
+
+  "Time needed for mondays"
+  monday: String
+
+  "Time needed for tuesdays"
+  tuesday: String
+
+  "Time needed for wednesdays"
+  wednesday: String
+
+  "Time needed for thursdays"
+  thursday: String
+
+  "Time needed for fridays"
+  friday: String
+
+  "Time needed for saturdays"
+  saturday: String
+
+  "Time needed for sundays"
+  sunday: String
 }

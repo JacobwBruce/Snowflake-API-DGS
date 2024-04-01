@@ -5,8 +5,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+interface DriverService {
+    List<Driver> getAllDrivers();
+    List<Driver> findDriverByDriverCode(String driverCode);
+
+}
+
 @Service
-public class DriverService {
+public class DriverServiceImpl implements DriverService {
 
     @Autowired
     private DriverRepository driverRepository;
@@ -20,3 +26,4 @@ public class DriverService {
     }
 
 }
+
