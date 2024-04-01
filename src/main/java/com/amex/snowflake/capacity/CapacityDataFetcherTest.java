@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest(classes = {DgsAutoConfiguration.class, CapacityDataFetcher.class})
@@ -57,7 +58,7 @@ public class CapacityDataFetcherTest {
         Mockito.when(capacityService.getAllCapacities()).thenAnswer(invocation -> capacities);
         Mockito.when(capacityService.getCapacityCount()).thenAnswer(invocation -> capacityCount);
         Mockito.when(capacityService.getCapacityCountByLocation("JFK")).thenAnswer(invocation -> capacityCount.get(0));
-        Mockito.when(capacityService.getCapacityCountByLocation("PHL")).thenAnswer(invocation -> List.of());
+        Mockito.when(capacityService.getCapacityCountByLocation("PHL")).thenAnswer(invocation -> null);
     }
 
     @Test
