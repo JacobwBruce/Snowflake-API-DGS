@@ -108,7 +108,12 @@ type Capacity {
 }
 
 type CapacityCount {
+  "Location of the capacity request"
   location: String
+
+  "Total number of open capacity requests"
   open: Int
+
+  "Total number of completed capacity requests"
   completed: Int
 }
